@@ -1,31 +1,10 @@
-# chatGPTClipboard
+Subject: Application for Data Engineer Position - Internal Candidate
 
-DECLARE @n INT = 3;  -- Replace with the actual number of tables
+Dear [Hiring Manager's Name],
 
-DECLARE @counter INT = 1;
-DECLARE @sql NVARCHAR(MAX) = N'SELECT uuid, column1, column2, ... FROM ';
+I'm excited to apply for the Data Engineer position within our company. As an IT Consultant with experience in data engineering, automation, and cloud technologies, I believe I can contribute effectively to the team. Please find my attached resume for your review.
 
-IF @n > 0
-BEGIN
-    WHILE @counter <= @n
-    BEGIN
-        DECLARE @table_name NVARCHAR(100);
-        SET @table_name = 'table_name_' + CAST(@counter AS NVARCHAR(10));
+Thank you for considering my application.
 
-        SET @sql = @sql + QUOTENAME(@table_name);
-        
-        IF @counter < @n
-        BEGIN
-            SET @sql = @sql + N' JOIN ';
-        END
-        
-        SET @counter = @counter + 1;
-    END;
-
-    IF @n > 1
-    BEGIN
-        SET @sql = @sql + N' ON ' + @table_name + '.uuid = ' + @table_name + '_1.uuid';
-    END;
-END;
-
-EXEC sp_executesql @sql;
+Best regards,
+[Your Name]
